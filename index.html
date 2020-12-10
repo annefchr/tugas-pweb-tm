@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Pengisian Kepuasan Pengunjung</title>
+        <link rel="stylesheet" href="style-form.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="img">
+                    <img src="logo.png">
+                </div>
+                <div class="text">
+                    <h2>Hogwarts Educational and <br> Tourism Village</h2>
+                </div>
+            </div>
+        </header>
+        <h3>Penilaian Kepuasan Pengunjung Hogwarts Village</h3> 
+        <div class="review-box">
+            <form id="penilaian" method="POST"> 
+                <input type="text" class="input" id="nama" placeholder="Masukkan nama Anda">
+                <input type="email" class="input" id="email" placeholder="Masukkan email Anda">
+                <textarea type="text" class="input textarea" id="kesan" placeholder="Kesan Anda setelah berkunjung"></textarea>
+                <textarea type="text" class="input textarea" id="pesan" placeholder="Pesan Anda kepada kami"></textarea>
+                <input type="button" name="button" id="btn" value="Kirim" onclick="AddRow()">
+          </form>
+        </div> 
+        <center>
+        <table id="tunjukkan">
+            <tr>
+                <th>Nama</th>
+                <th>E-mail</th>
+                <th>Kesan</th>
+                <th>Pesan</th>
+            </tr>
+            <tr>
+                <td>Burhan.</td>
+                <td>burhanganteng@gmail.com</td>
+                <td>Pelayanannya baik, pemandangannya indah.</td>
+                <td>Mungkin harga makanannya bisa diturunkan sedikit.</td>
+            </tr>
+            <tr>
+                <td>Septian.</td>
+                <td>septiansangpelaut@gmail</td>
+                <td>Kegiatannya menyenangkan sekali.</td>
+                <td>Mungkin jalannya bisa diperbaiki, karena sedikit rusak.</td>
+            </tr>
+            <tr>
+                <td>Endang.</td>
+                <td>endangohendang@gmail.com</td>
+                <td>Makannya enak-enak, anak saya suka. Terimakasih.</td>
+                <td>Tukang parkirnya agak sedikit galak, saya takut.</td>
+            </tr>
+        </table>
+        </center>
+    </body>
+    <script type="text/javascript">
+        alert("Selamat datang di halaman review!");
+        var kirim = document.getElementById('kirim');
+        kirim.addEventListener('click', );
+
+        var row = 4
+
+        function penilaian(){
+            var nama = document.getElementById('nama').value;
+            var email = document.getElementById('email').value;
+            var kesan = document.getElementById('kesan').value;
+            var pesan = document.getElementById('pesan').value;
+
+            if (!nama || !email || !kesan || !pesan) {
+                alert ("Tolong isi semua bagian form.");
+                return;
+            }
+
+            var tunjukkan = document.getElementById('tunjukkan');
+            var newRow = tunjukkan.insertRow(row);
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = nama;
+            cell2.innerHTML = email;
+            cell3.innerHTML = kesan;
+            cell4.innerHTML = pesan;
+
+            row++;
+    }
+    </script>
+</html>
